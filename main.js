@@ -16,9 +16,12 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    titleBarStyle: 'hiddenInset'
   })
-
+  win.once('ready-to-show',() => {
+    win.show()
+  })
   // and load the index.html of the app.
 //   win.loadFile('src/index.html')
   win.loadURL(url.format({
@@ -88,6 +91,6 @@ app.on('activate', () => {
   }
 })
 
-ipc.on('update-notify-value', function(event, arg) {
+ipc.on('update-notify-value', (event, arg) => {
   win.webContents.send('targetPriceVal', arg)
 })

@@ -11,7 +11,6 @@ const ipc = electron.ipcRenderer
 const notifyBtn = document.getElementById('notifyBtn')
 var price = document.querySelector('h1')
 var targetPrice = document.getElementById('targetPrice')
-var targetPriceVal
 
 function getXRP() {
     axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=XRP&tsyms=USD')
@@ -36,7 +35,7 @@ notifyBtn.addEventListener('click', function(event) {
     win.show()
 })
 
-ipc.on('targetPriceVal', function (event, arg) {
+ipc.on('targetPriceVal', (event, arg) => {
     targetPriceVal = Number(arg)
     targetPrice.innerHTML = '$'+targetPriceVal.toLocaleString('en')
 })
