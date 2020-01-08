@@ -12,15 +12,28 @@ const notifyBtn = document.getElementById('notifyBtn')
 var price = document.querySelector('h1')
 var targetPrice = document.getElementById('targetPrice')
 
-function getXRP() {
-    axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=XRP&tsyms=USD')
+function getCURR() {
+    var currency = [ "BTC","XRP","ETH"]
+    // var currency = ["BTC"]
+    // const currency = ["BTC"]
+    for (i=0;i < currency.length; i++){
+        const curr = currency[i]
+        console.log("currency="+curr)
+        axios.get('https://min-api.cryptocompare.com/data/pricemulti', {
+            params : {
+                fsyms : curr,
+                tsyms : "KRW"
+            }
+        })
         .then(res => {
-            const cryptos = res.data.XRP.USD
-            price.innerHTML = '$'+cryptos.toLocaleString('en')
-    })
+            console.log("res curr="+curr)
+            const cryptos = res.data[curr].KRW
+            document.getElementById(curr).innerHTML = cryptos.toLocaleString('en')+"원"
+        })        
+    }
 }
-getXRP()
-setInterval(getXRP, 10000);
+getCURR()
+setInterval(getCURR, 10000);
 
 
 notifyBtn.addEventListener('click', function(event) {
