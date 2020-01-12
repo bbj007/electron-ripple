@@ -9,24 +9,23 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
   <body>
-    <div class="font-serif flex items-stretch mt-4">
-      <div class="flex-1 text-center bg-gray-300">Real time Virtual Currency Price</div> 
-      <div class="flex-1 text-center">
-        <button id="notifyBtn">Update Price..</button>
-      </div>
+    <div class="font-serif text-center flex-col bg-gray-300 mt-4">Real time Virtual Currency Price</div>
+    <div class="flex bg-gray-100 mt-4">
+      <div class="flex-1 m-3 font-serif">BTC</div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="BTC-KRW">Loading..</span> </div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="BTC-USD">Loading..</span> </div>
     </div>
-    <div class="font-serif flex bg-gray-100 mt-4">
-      <div class="flex-1 m-3">BTC</div>
-      <div class="flex-1 m-3 text-right"><span id="BTC">Loading..</span> </div>
+    <div class="flex bg-gray-150">
+      <div class="flex-1 m-3 font-serif">XRP</div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="XRP-KRW">Loading..</span> </div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="XRP-USD">Loading..</span> </div>
     </div>
-    <div class="font-serif flex bg-gray-150">
-      <div class="flex-1 m-3">XRP</div>
-      <div class="flex-1 m-3 text-right"><span id="XRP">Loading..</span> </div>
-    </div>
-    <div class="font-serif flex flex-row bg-gray-100">
-      <div class="flex-1 m-3">ETH</div>
-      <div class="flex-1 m-3 text-right"><span id="ETH">Loading..</span> </div>
+    <div class="flex flex-row bg-gray-100">
+      <div class="flex-1 m-3 font-serif">ETH</div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="ETH-KRW">Loading..</span> </div>
+      <div class="flex-1 m-3 text-right font-Helvetica Neue"><span id="ETH-USD">Loading..</span> </div>
     </div>
     <script src="index.js"></script>
+    <script src="weather.js"></script>
   </body>
 </html>

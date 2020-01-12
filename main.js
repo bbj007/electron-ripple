@@ -71,7 +71,7 @@ function createWindow () {
       }
   ])
 
-  Menu.setApplicationMenu(menu);
+  // Menu.setApplicationMenu(menu);
 }
 
 // 이 메서드는 Electron이 초기화를 마치고 
