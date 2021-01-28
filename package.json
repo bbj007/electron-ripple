@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "7.1.7",
+    "electron": "9.4.0",
     "electron-packager": "^14.1.1",
     "gulp": "^4.0.2",
     "gulp-csso": "^4.0.1",
